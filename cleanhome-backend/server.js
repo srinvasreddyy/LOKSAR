@@ -10,7 +10,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://cleanhome-smoky.vercel.app'
+  ],
+  credentials: true
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // --- Multer Configuration ---
@@ -123,6 +131,14 @@ const sendEmail = async (to, subject, htmlContent, attachments = []) => {
 };
 
 // --- Endpoints ---
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+app.get('/', (req, res) => {
+  res.send('Loksar Backend is running');
+});
 
 // 1. Contact Us
 app.post('/api/contact', async (req, res) => {
@@ -317,6 +333,3 @@ app.post('/api/book-gardening', upload.array('files'), async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
