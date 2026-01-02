@@ -14,7 +14,11 @@ const corsOptions = {
   origin: [
     'http://localhost:5173',
     'http://localhost:3000',
-    'https://cleanhome-smoky.vercel.app'
+    'https://cleanhome-smoky.vercel.app',
+    'https://loksar.co.uk',
+    'https://www.loksar.co.uk',
+    'https://api.loksar.co.uk',
+    'https://api.loksar.co.uk/api'
   ],
   credentials: true
 };
