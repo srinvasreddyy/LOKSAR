@@ -18,7 +18,8 @@ const corsOptions = {
     'https://loksar.co.uk',
     'https://www.loksar.co.uk',
     'https://api.loksar.co.uk',
-    'https://api.loksar.co.uk/api'
+    'https://api.loksar.co.uk/api',
+    'https://cleanhome-delta.vercel.app'
   ],
   credentials: true
 };
